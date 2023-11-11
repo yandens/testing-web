@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: testing-app
-          image: asia-southeast2-docker.pkg.dev/iac-cicd-401609/petik-repository/testing-app:0.4
+          image: ENV_GAR_LOCATION-docker.pkg.dev/ENV_PROJECT_ID/ENV_REPOSITORY/ENV_IMAGE:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
