@@ -48,7 +48,7 @@ jobs:
           command: |
             sed -i -e 's~PORT~'"$IMAGE_PORT"'~g' Dockerfile
             docker build -t $GAR_LOCATION-docker.pkg.dev/$GOOGLE_PROJECT_ID/$GAR_REPOSITORY/$IMAGE:$CIRCLE_SHA1 .
-            docker tag $GAR_LOCATION-docker.pkg.dev/$GOOGLE_PROJECT_ID/$GAR_REPOSITORY/$IMAGE_DE:$CIRCLE_SHA1 $GAR_LOCATION-docker.pkg.dev/$GOOGLE_PROJECT_ID/$GAR_REPOSITORY/$IMAGE:latest
+            docker tag $GAR_LOCATION-docker.pkg.dev/$GOOGLE_PROJECT_ID/$GAR_REPOSITORY/$IMAGE:$CIRCLE_SHA1 $GAR_LOCATION-docker.pkg.dev/$GOOGLE_PROJECT_ID/$GAR_REPOSITORY/$IMAGE:latest
             docker push $GAR_LOCATION-docker.pkg.dev/$GOOGLE_PROJECT_ID/$GAR_REPOSITORY/$IMAGE:latest
       - persist_to_workspace:
           root: .
