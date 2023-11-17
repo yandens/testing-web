@@ -35,8 +35,8 @@ RUN a2enmod rewrite headers
 # Ensure PHP logs are captured by the container
 ENV LOG_CHANNEL=stderr
 
-# Give permission to append to logs
-RUN chown -R www-data:www-data /var/www/html
+# Give permission to append to logs to storage and bootstrap/cache
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Run composer install
 RUN composer install --no-interaction --no-scripts --no-progress --prefer-dist
